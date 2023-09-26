@@ -1,18 +1,18 @@
 package fr.formation.appschool.web.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
-import lombok.Value;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
-@Builder
+import java.util.List;
+
+@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor(force = true)
 @Value
-public class Student {
-    Integer id;
-
-    String firstname;
-
-    String lastname;
+@Getter
+@Setter
+public class Student extends Person{
+   Double note;
+   List<Course> courses;
+   List<Comment> comments ;
 }
